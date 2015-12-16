@@ -23,9 +23,6 @@
       <Project>{abb4bcb5-19ff-4d89-ae67-0c4eb952ef22}</Project>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Midl Include="..\CoreMFSource.App.idl" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{32326bd5-23d8-4993-a79f-46a819bcc794}</ProjectGuid>
     <RootNamespace>CoreMFSource</RootNamespace>
@@ -80,7 +77,6 @@
     <TargetName>$(ItemsRootNamespace)</TargetName>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
     <IntDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntDir>
-    <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <GenerateManifest>false</GenerateManifest>
@@ -88,7 +84,6 @@
     <TargetName>$(ItemsRootNamespace)</TargetName>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
     <IntDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntDir>
-    <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <GenerateManifest>false</GenerateManifest>
@@ -96,7 +91,6 @@
     <TargetName>$(ItemsRootNamespace)</TargetName>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
     <IntDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntDir>
-    <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <GenerateManifest>false</GenerateManifest>
@@ -104,7 +98,6 @@
     <TargetName>$(ItemsRootNamespace)</TargetName>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
     <IntDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntDir>
-    <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -119,9 +112,9 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
       <AdditionalDependencies>WindowsPhoneCore.lib;RuntimeObject.lib;PhoneAppModelHost.lib;mfplat.lib;mfuuid.lib;mf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>..\CoreMFSource.def</ModuleDefinitionFile>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
     </Link>
     <BuildLog>
       <Path />
@@ -130,10 +123,7 @@
       <MetadataFileName>$(IntDir)$(ItemsRootNamespace).winmd</MetadataFileName>
       <GenerateTypeLibrary>false</GenerateTypeLibrary>
     </Midl>
-    <CustomBuildStep>
-      <Outputs>$(OutDir)$(ItemsRootNamespace).winmd;%(Outputs)</Outputs>
-      <Command>mdmerge -metadata_dir "$(TargetPlatformSdkMetadataLocation)" -o "$(OutDir)\" -i "$(IntDir)\" -v -partial</Command>
-    </CustomBuildStep>
+    <CustomBuildStep />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -149,9 +139,9 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
       <AdditionalDependencies>WindowsPhoneCore.lib;RuntimeObject.lib;PhoneAppModelHost.lib;mfplat.lib;mfuuid.lib;mf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>..\CoreMFSource.def</ModuleDefinitionFile>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
     </Link>
     <BuildLog>
       <Path />
@@ -160,10 +150,7 @@
       <MetadataFileName>$(IntDir)$(ItemsRootNamespace).winmd</MetadataFileName>
       <GenerateTypeLibrary>false</GenerateTypeLibrary>
     </Midl>
-    <CustomBuildStep>
-      <Outputs>$(OutDir)$(ItemsRootNamespace).winmd;%(Outputs)</Outputs>
-      <Command>mdmerge -metadata_dir "$(TargetPlatformSdkMetadataLocation)" -o "$(OutDir)\" -i "$(IntDir)\" -v -partial</Command>
-    </CustomBuildStep>
+    <CustomBuildStep />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|arm'">
     <ClCompile>
@@ -178,9 +165,9 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
       <AdditionalDependencies>WindowsPhoneCore.lib;RuntimeObject.lib;PhoneAppModelHost.lib;mfplat.lib;mfuuid.lib;mf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>..\CoreMFSource.def</ModuleDefinitionFile>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
     </Link>
     <BuildLog>
       <Path />
@@ -189,10 +176,7 @@
       <MetadataFileName>$(IntDir)$(ItemsRootNamespace).winmd</MetadataFileName>
       <GenerateTypeLibrary>false</GenerateTypeLibrary>
     </Midl>
-    <CustomBuildStep>
-      <Outputs>$(OutDir)$(ItemsRootNamespace).winmd;%(Outputs)</Outputs>
-      <Command>mdmerge -metadata_dir "$(TargetPlatformSdkMetadataLocation)" -o "$(OutDir)\" -i "$(IntDir)\" -v -partial</Command>
-    </CustomBuildStep>
+    <CustomBuildStep />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|arm'">
     <ClCompile>
@@ -208,9 +192,9 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
       <AdditionalDependencies>WindowsPhoneCore.lib;RuntimeObject.lib;PhoneAppModelHost.lib;mfplat.lib;mfuuid.lib;mf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>..\CoreMFSource.def</ModuleDefinitionFile>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
     </Link>
     <BuildLog>
       <Path />
@@ -219,10 +203,7 @@
       <MetadataFileName>$(IntDir)$(ItemsRootNamespace).winmd</MetadataFileName>
       <GenerateTypeLibrary>false</GenerateTypeLibrary>
     </Midl>
-    <CustomBuildStep>
-      <Outputs>$(OutDir)$(ItemsRootNamespace).winmd;%(Outputs)</Outputs>
-      <Command>mdmerge -metadata_dir "$(TargetPlatformSdkMetadataLocation)" -o "$(OutDir)\" -i "$(IntDir)\" -v -partial</Command>
-    </CustomBuildStep>
+    <CustomBuildStep />
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

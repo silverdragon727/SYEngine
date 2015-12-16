@@ -33,8 +33,14 @@
     <ProjectReference Include="..\..\CoreMFSource\CoreMFSource.Windows\CoreMFSource.Windows.vcxproj">
       <Project>{5f555a02-e82f-415e-8043-d7209194be92}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\..\ffcodecs\ffcodecs.Windows\ffcodecs.Windows.vcxproj">
+      <Project>{8be11e1a-2bcc-4764-9a72-bd80012974c3}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\..\MultipartStreamMatroska\MultipartStreamMatroska.Windows\MultipartStreamMatroska.Windows.vcxproj">
       <Project>{404150b6-9a3a-449e-a410-5d64ff3b85d3}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WinhttpWrapper\WinhttpWrapper.Windows\WinhttpWrapper.Windows.vcxproj">
+      <Project>{8d81cb54-ab9e-4675-9321-06de84bb47f7}</Project>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -152,7 +158,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>runtimeobject.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>runtimeobject.lib;mfplat.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
     <BuildLog>
@@ -174,7 +180,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>runtimeobject.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>runtimeobject.lib;mfplat.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
     <BuildLog>
@@ -195,7 +201,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>runtimeobject.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>runtimeobject.lib;mfplat.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
     <BuildLog>
@@ -217,7 +223,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>runtimeobject.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>runtimeobject.lib;mfplat.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
     <BuildLog>
@@ -238,7 +244,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>runtimeobject.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>runtimeobject.lib;mfplat.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
     <BuildLog>
@@ -260,7 +266,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>runtimeobject.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>runtimeobject.lib;mfplat.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
     <BuildLog>

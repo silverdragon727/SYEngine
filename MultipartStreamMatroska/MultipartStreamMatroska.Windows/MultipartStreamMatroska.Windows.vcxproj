@@ -34,9 +34,6 @@
       <Project>{8d81cb54-ab9e-4675-9321-06de84bb47f7}</Project>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Midl Include="..\MultipartStreamMatroska.App.idl" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{404150B6-9A3A-449E-A410-5D64FF3B85D3}</ProjectGuid>
     <RootNamespace>MultipartStreamMatroska</RootNamespace>
@@ -108,7 +105,6 @@
     <TargetName>$(ItemsRootNamespace)</TargetName>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
     <IntDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntDir>
-    <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <GenerateManifest>false</GenerateManifest>
@@ -116,7 +112,6 @@
     <TargetName>$(ItemsRootNamespace)</TargetName>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
     <IntDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntDir>
-    <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <GenerateManifest>false</GenerateManifest>
@@ -124,7 +119,6 @@
     <TargetName>$(ItemsRootNamespace)</TargetName>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
     <IntDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntDir>
-    <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <GenerateManifest>false</GenerateManifest>
@@ -132,7 +126,6 @@
     <TargetName>$(ItemsRootNamespace)</TargetName>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
     <IntDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntDir>
-    <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <GenerateManifest>false</GenerateManifest>
@@ -140,7 +133,6 @@
     <TargetName>$(ItemsRootNamespace)</TargetName>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
     <IntDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntDir>
-    <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <GenerateManifest>false</GenerateManifest>
@@ -148,7 +140,6 @@
     <TargetName>$(ItemsRootNamespace)</TargetName>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
     <IntDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntDir>
-    <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -162,7 +153,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
       <AdditionalDependencies>kernel32.lib;mfplat.lib;mfuuid.lib;mf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>..\MultipartStreamMatroska.def</ModuleDefinitionFile>
     </Link>
@@ -173,10 +164,7 @@
       <MetadataFileName>$(IntDir)$(ItemsRootNamespace).winmd</MetadataFileName>
       <GenerateTypeLibrary>false</GenerateTypeLibrary>
     </Midl>
-    <CustomBuildStep>
-      <Command>mdmerge -metadata_dir "$(TargetPlatformSdkMetadataLocation)" -o "$(OutDir)\" -i "$(IntDir)\" -v -partial</Command>
-      <Outputs>$(OutDir)$(ItemsRootNamespace).winmd;%(Outputs)</Outputs>
-    </CustomBuildStep>
+    <CustomBuildStep />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -191,7 +179,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
       <AdditionalDependencies>kernel32.lib;mfplat.lib;mfuuid.lib;mf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>..\MultipartStreamMatroska.def</ModuleDefinitionFile>
     </Link>
@@ -202,10 +190,7 @@
       <MetadataFileName>$(IntDir)$(ItemsRootNamespace).winmd</MetadataFileName>
       <GenerateTypeLibrary>false</GenerateTypeLibrary>
     </Midl>
-    <CustomBuildStep>
-      <Command>mdmerge -metadata_dir "$(TargetPlatformSdkMetadataLocation)" -o "$(OutDir)\" -i "$(IntDir)\" -v -partial</Command>
-      <Outputs>$(OutDir)$(ItemsRootNamespace).winmd;%(Outputs)</Outputs>
-    </CustomBuildStep>
+    <CustomBuildStep />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|arm'">
     <ClCompile>
@@ -219,7 +204,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
       <AdditionalDependencies>kernel32.lib;mfplat.lib;mfuuid.lib;mf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>..\MultipartStreamMatroska.def</ModuleDefinitionFile>
     </Link>
@@ -230,10 +215,7 @@
       <MetadataFileName>$(IntDir)$(ItemsRootNamespace).winmd</MetadataFileName>
       <GenerateTypeLibrary>false</GenerateTypeLibrary>
     </Midl>
-    <CustomBuildStep>
-      <Command>mdmerge -metadata_dir "$(TargetPlatformSdkMetadataLocation)" -o "$(OutDir)\" -i "$(IntDir)\" -v -partial</Command>
-      <Outputs>$(OutDir)$(ItemsRootNamespace).winmd;%(Outputs)</Outputs>
-    </CustomBuildStep>
+    <CustomBuildStep />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|arm'">
     <ClCompile>
@@ -248,7 +230,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
       <AdditionalDependencies>kernel32.lib;mfplat.lib;mfuuid.lib;mf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>..\MultipartStreamMatroska.def</ModuleDefinitionFile>
     </Link>
@@ -259,10 +241,7 @@
       <MetadataFileName>$(IntDir)$(ItemsRootNamespace).winmd</MetadataFileName>
       <GenerateTypeLibrary>false</GenerateTypeLibrary>
     </Midl>
-    <CustomBuildStep>
-      <Command>mdmerge -metadata_dir "$(TargetPlatformSdkMetadataLocation)" -o "$(OutDir)\" -i "$(IntDir)\" -v -partial</Command>
-      <Outputs>$(OutDir)$(ItemsRootNamespace).winmd;%(Outputs)</Outputs>
-    </CustomBuildStep>
+    <CustomBuildStep />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -276,7 +255,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
       <AdditionalDependencies>kernel32.lib;mfplat.lib;mfuuid.lib;mf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>..\MultipartStreamMatroska.def</ModuleDefinitionFile>
     </Link>
@@ -287,10 +266,7 @@
       <MetadataFileName>$(IntDir)$(ItemsRootNamespace).winmd</MetadataFileName>
       <GenerateTypeLibrary>false</GenerateTypeLibrary>
     </Midl>
-    <CustomBuildStep>
-      <Command>mdmerge -metadata_dir "$(TargetPlatformSdkMetadataLocation)" -o "$(OutDir)\" -i "$(IntDir)\" -v -partial</Command>
-      <Outputs>$(OutDir)$(ItemsRootNamespace).winmd;%(Outputs)</Outputs>
-    </CustomBuildStep>
+    <CustomBuildStep />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -305,7 +281,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
       <AdditionalDependencies>kernel32.lib;mfplat.lib;mfuuid.lib;mf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>..\MultipartStreamMatroska.def</ModuleDefinitionFile>
     </Link>
@@ -316,10 +292,7 @@
       <MetadataFileName>$(IntDir)$(ItemsRootNamespace).winmd</MetadataFileName>
       <GenerateTypeLibrary>false</GenerateTypeLibrary>
     </Midl>
-    <CustomBuildStep>
-      <Command>mdmerge -metadata_dir "$(TargetPlatformSdkMetadataLocation)" -o "$(OutDir)\" -i "$(IntDir)\" -v -partial</Command>
-      <Outputs>$(OutDir)$(ItemsRootNamespace).winmd;%(Outputs)</Outputs>
-    </CustomBuildStep>
+    <CustomBuildStep />
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

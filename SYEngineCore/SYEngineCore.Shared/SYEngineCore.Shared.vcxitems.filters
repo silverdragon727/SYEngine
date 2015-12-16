@@ -4,6 +4,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pch.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Core.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Playlist.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)AutoLib.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp" />
