@@ -1,7 +1,7 @@
 #include "Core.h"
 
-#define _STM_HANDLER_NAME L"CoreMFSource.HDCoreByteStreamHandler"
-#define _URL_HANDLER_NAME L"MultipartStreamMatroska.UrlHandler"
+HStringReference _stmHandlerName(L"CoreMFSource.HDCoreByteStreamHandler");
+HStringReference _urlHandlerName(L"MultipartStreamMatroska.UrlHandler");
 
 using namespace SYEngineCore;
 
@@ -16,17 +16,17 @@ void Core::Initialize()
 	}
 
 	_pMediaExtensionManager->RegisterSchemeHandler(
-		HStringReference(_URL_HANDLER_NAME).Get(),
+		_urlHandlerName.Get(),
 		HStringReference(L"plist:").Get());
 
 	_pMediaExtensionManager->RegisterByteStreamHandler(
-		HStringReference(_STM_HANDLER_NAME).Get(),
+		_stmHandlerName.Get(),
 		HStringReference(L".mka").Get(), HStringReference(L"video/force-network-stream").Get());
 
 	_pMediaExtensionManager->RegisterByteStreamHandler(
-		HStringReference(_STM_HANDLER_NAME).Get(),
+		_stmHandlerName.Get(),
 		HStringReference(L".flv").Get(), HStringReference(L"video/x-flv").Get());
 	_pMediaExtensionManager->RegisterByteStreamHandler(
-		HStringReference(_STM_HANDLER_NAME).Get(),
+		_stmHandlerName.Get(),
 		HStringReference(L".mkv").Get(), HStringReference(L"video/x-matroska").Get());
 }
